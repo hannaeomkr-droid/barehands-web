@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>반짝 — 넌 나의 반짝 ✨</title>
+
+<meta property="og:title" content="넌 나의 반짝 ✨ — 반짝 체험단" />
+<meta property="og:description" content="반려동물과의 반짝임을 한 알 한 알 담은 수제 비즈 악세서리, 반짝. 무료 샘플링 체험단을 모집합니다." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#FAF9F6" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --paper:#FAF9F6;
+    --ink:#1C1B19;
+    --ink-2:#33322E;
+    --ink-3:#6E6C66;
+    --ink-4:#9A988F;
+    --line:#E4E2DC;
+    --line-2:#D8D6CF;
+    --field:#FFFFFF;
+    --measure:560px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ -webkit-text-size-adjust:100%; }
+
+  body{
+    font-family:"IBM Plex Sans KR", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    background:var(--paper);
+    color:var(--ink-2);
+    line-height:1.85;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:var(--measure);
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  ::selection{ background:#E9E7DF; }
+
+  /* ---------- 여는 글 ---------- */
+  .intro{ padding:76px 0 8px; }
+
+  .kicker{
+    font-size:.8rem;
+    font-weight:500;
+    letter-spacing:.14em;
+    color:var(--ink-4);
+    margin-bottom:52px;
+  }
+
+  .poem p{
+    font-size:clamp(1.02rem, 3.3vw, 1.12rem);
+    line-height:2.02;
+    color:var(--ink-2);
+    margin-bottom:1.7em;
+  }
+  .poem .refrain{
+    font-size:clamp(1.4rem, 5.4vw, 1.8rem);
+    font-weight:600;
+    line-height:1.5;
+    color:var(--ink);
+    letter-spacing:-.01em;
+    margin-bottom:1.5em;
+  }
+  .poem .refrain.close{
+    margin-top:.4em;
+    margin-bottom:0;
+  }
+
+  /* ---------- 구분 ---------- */
+  .divide{
+    max-width:var(--measure);
+    margin:64px auto;
+    padding:0 24px;
+  }
+  .divide hr{
+    border:0;
+    height:1px;
+    background:var(--line);
+  }
+
+  /* ---------- 체험단 안내 ---------- */
+  .apply{ padding-bottom:40px; }
+
+  .apply h2{
+    font-size:clamp(1.2rem, 4.4vw, 1.42rem);
+    font-weight:600;
+    letter-spacing:-.01em;
+    color:var(--ink);
+    margin-bottom:16px;
+  }
+  .apply .desc{
+    font-size:1rem;
+    line-height:1.85;
+    color:var(--ink-2);
+    margin-bottom:10px;
+  }
+  .apply .desc a{ color:var(--ink); text-underline-offset:3px; }
+  .apply .fine{
+    font-size:.9rem;
+    color:var(--ink-4);
+    margin-bottom:48px;
+  }
+
+  /* ---------- 폼 ---------- */
+  .q{ margin-bottom:42px; }
+  .q > .label{
+    display:block;
+    font-size:1.02rem;
+    font-weight:500;
+    line-height:1.6;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+  .q .num{
+    color:var(--ink-4);
+    font-weight:500;
+    margin-right:.5em;
+  }
+  .q .req{
+    display:inline-block;
+    font-size:.78rem;
+    font-weight:500;
+    color:var(--ink-3);
+    margin-left:.5em;
+    letter-spacing:.02em;
+  }
+  .q .hint{
+    display:block;
+    font-size:.88rem;
+    color:var(--ink-4);
+    line-height:1.6;
+    margin-bottom:14px;
+  }
+  .q .label + .hint{ margin-top:2px; }
+
+  input[type="text"],
+  textarea{
+    width:100%;
+    font-family:inherit;
+    font-size:1rem;
+    color:var(--ink);
+    background:var(--field);
+    border:1px solid var(--line-2);
+    border-radius:4px;
+    padding:13px 14px;
+    line-height:1.6;
+    transition:border-color .15s ease, box-shadow .15s ease;
+    -webkit-appearance:none;
+    appearance:none;
+  }
+  input[type="text"]::placeholder,
+  textarea::placeholder{ color:#BEBCB3; }
+  input[type="text"]:focus,
+  textarea:focus{
+    outline:none;
+    border-color:var(--ink);
+    box-shadow:0 0 0 3px rgba(28,27,25,.07);
+  }
+  textarea{ min-height:118px; resize:vertical; }
+
+  /* 라디오·체크 */
+  fieldset{ border:0; }
+  .opt{
+    display:flex;
+    align-items:flex-start;
+    gap:11px;
+    padding:9px 0;
+    cursor:pointer;
+    font-size:1rem;
+    color:var(--ink-2);
+    line-height:1.55;
+  }
+  .opt input{
+    margin:0;
+    margin-top:3px;
+    width:17px; height:17px;
+    accent-color:var(--ink);
+    flex:0 0 auto;
+    cursor:pointer;
+  }
+  .opt:hover{ color:var(--ink); }
+
+  .etc-field{
+    margin-top:10px;
+    margin-left:28px;
+    max-width:calc(100% - 28px);
+    display:none;
+  }
+  .etc-field.show{ display:block; }
+  .etc-field input{ padding:11px 12px; font-size:1rem; }
+
+  .group-note{
+    font-size:.82rem;
+    color:#C0392B;
+    margin-top:8px;
+    display:none;
+  }
+  .group-note.show{ display:block; }
+
+  .err{
+    font-size:.85rem;
+    color:#C0392B;
+    margin-top:8px;
+    display:none;
+  }
+  .err.show{ display:block; }
+  .q.invalid input[type="text"]{ border-color:#C0392B; }
+
+  /* 제출 */
+  .submit-wrap{ margin-top:8px; }
+  .privacy{
+    font-size:.85rem;
+    color:var(--ink-4);
+    line-height:1.65;
+    margin-bottom:20px;
+  }
+  button.send{
+    width:100%;
+    font-family:inherit;
+    font-size:1.02rem;
+    font-weight:500;
+    letter-spacing:.02em;
+    color:var(--paper);
+    background:var(--ink);
+    border:0;
+    border-radius:5px;
+    padding:16px 24px;
+    cursor:pointer;
+    transition:opacity .15s ease, transform .05s ease;
+  }
+  button.send:hover{ opacity:.86; }
+  button.send:active{ transform:translateY(1px); }
+  button.send:disabled{ opacity:.5; cursor:default; }
+  button.send:focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
+
+  .form-error{
+    display:none;
+    font-size:.9rem;
+    color:#C0392B;
+    line-height:1.6;
+    margin-top:16px;
+  }
+  .form-error.show{ display:block; }
+
+  /* 개인정보 동의 */
+  .consent-box{
+    background:#F3F2EE;
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:16px 18px;
+    margin-bottom:16px;
+  }
+  .consent-title{
+    font-size:.9rem;
+    font-weight:600;
+    color:var(--ink);
+    margin-bottom:10px;
+  }
+  .consent-list{ list-style:none; margin:0; padding:0; }
+  .consent-list li{
+    font-size:.86rem;
+    line-height:1.7;
+    color:var(--ink-3);
+  }
+  .consent-list li + li{ margin-top:3px; }
+  .consent-list b{ color:var(--ink-2); font-weight:600; margin-right:.5em; }
+  .consent-check{ font-size:.96rem; color:var(--ink); }
+
+  /* 완료 화면 */
+  .done{ display:none; padding:20px 0 10px; }
+  .done.show{ display:block; }
+  .done .refrain{
+    font-size:clamp(1.3rem, 5vw, 1.65rem);
+    font-weight:600;
+    color:#6F2DA8;
+    margin-bottom:22px;
+    line-height:1.5;
+  }
+  .done p{
+    font-size:1.02rem;
+    line-height:1.9;
+    color:#6F2DA8;
+    margin-bottom:1.3em;
+  }
+  .done p a{ color:#6F2DA8; text-underline-offset:3px; }
+
+  /* ---------- 닫는 글 ---------- */
+  footer{
+    padding:72px 0 64px;
+    border-top:1px solid var(--line);
+    margin-top:72px;
+  }
+  footer .wrap{ text-align:left; }
+  .ig-link{
+    display:inline-block;
+    font-size:.98rem;
+    font-weight:500;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line-2);
+    padding-bottom:2px;
+    transition:border-color .15s ease;
+  }
+  .ig-link:hover{ border-color:var(--ink); }
+  footer .sign{
+    margin-top:20px;
+    font-size:.86rem;
+    color:var(--ink-4);
+    letter-spacing:.01em;
+  }
+
+  a:focus-visible,
+  .opt input:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+
+  @media (max-width:640px){
+    .opt{ padding:12px 0; }
+    .opt input{ width:20px; height:20px; margin-top:2px; }
+  }
+  @media (max-width:400px){
+    .intro{ padding-top:60px; }
+    button.send{ font-size:1rem; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- 여는 글 -->
+  <header class="intro">
+    <div class="wrap">
+      <div class="poem">
+        <p>
+          대체 내가 뭐가 좋다고 하루 종일 기다렸을까.<br />
+          아무리 힘든 하루를 보내고 와도,<br />
+          눈을 마주치면 이내 편안해지는.<br />
+          우리는 그렇게 서로가 서로에게<br />
+          삶의 반쪽이 되어준 존재.
+        </p>
+
+        <p>
+          반짝은 그 반쪽이 건넨 반짝임을,<br />
+          한 알 한 알 담아 만든 비즈 악세사리입니다.
+        </p>
+
+        <p>
+          당신과 반려동물의 이야기를 들려주세요.<br />
+          그 이야기가 반짝의 시작이 될 거예요.
+        </p>
+
+        <p>
+          서로가 서로의 반짝이었음을<br />
+          오래도록 기억할 수 있도록—
+        </p>
+
+        <p class="refrain close">넌 나의 반짝 ✨</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="divide"><hr /></div>
+
+  <!-- 체험단 -->
+  <main class="apply">
+    <div class="wrap">
+      <h2>사랑하는 나의 반짝을 떠올리며</h2>
+      <p class="desc">당신의 반짝은 어떤 아이인가요. 함께한 순간과 그 아이만의 반짝임을 떠올리며, 아래에 이야기를 들려주세요.</p>
+      <p class="fine">편하게, 떠오르는 대로 답해주셔도 괜찮아요. (약 3분)</p>
+
+      <form id="form" novalidate>
+
+        <!-- Q1 -->
+        <div class="q" id="q1">
+          <label class="label" for="petName"><span class="num">1</span>반려동물의 이름을 알려주세요.<span class="req">· 필수</span></label>
+          <input type="text" id="petName" name="petName" autocomplete="off" />
+          <p class="err" data-err="petName">이름을 남겨주세요.</p>
+        </div>
+
+        <!-- Q2 -->
+        <div class="q" id="q2">
+          <span class="label"><span class="num">2</span>어떤 반려동물과 함께 지내나요?<span class="req">· 필수</span></span>
+          <fieldset>
+            <label class="opt"><input type="radio" name="petType" value="강아지" /> <span>강아지</span></label>
+            <label class="opt"><input type="radio" name="petType" value="고양이" /> <span>고양이</span></label>
+            <label class="opt"><input type="radio" name="petType" value="그 외" data-etc="etc-pettype" /> <span>그 외</span></label>
+          </fieldset>
+          <div class="etc-field" id="etc-pettype">
+            <input type="text" name="petTypeOther" placeholder="어떤 아이인지 알려주세요" autocomplete="off" />
+          </div>
+          <p class="err" data-err="petType">함께 지내는 반려동물을 선택해주세요.</p>
+        </div>
+
+        <!-- Q3 -->
+        <div class="q">
+          <label class="label" for="momentMemory"><span class="num">3</span>반려동물을 떠올리면 가장 기억에 남는 순간은 언제인가요?</label>
+          <span class="hint">그때의 표정이나 행동도 함께 들려주세요.</span>
+          <textarea id="momentMemory" name="momentMemory"></textarea>
+        </div>
+
+        <!-- Q4 -->
+        <div class="q">
+          <label class="label" for="relationship"><span class="num">4</span>우리는 서로에게 어떤 존재일까요?</label>
+          <span class="hint">한 문장으로 표현한다면요?</span>
+          <textarea id="relationship" name="relationship" style="min-height:78px"></textarea>
+        </div>
+
+        <!-- Q5 -->
+        <div class="q">
+          <span class="label"><span class="num">5</span>반려동물과의 순간이나 마음을 간직하기 위해 해본 것이 있나요?</span>
+          <span class="hint">해당하는 것을 모두 골라주세요.</span>
+          <fieldset>
+            <label class="opt"><input type="checkbox" name="keepWays" value="사진·영상을 자주 남긴다" /> <span>사진·영상을 자주 남긴다</span></label>
+            <label class="opt"><input type="checkbox" name="keepWays" value="반려동물 전용 SNS 계정을 운영한다" /> <span>반려동물 전용 SNS 계정을 운영한다</span></label>
+            <label class="opt"><input type="checkbox" name="keepWays" value="다이어리·기록으로 남긴다" /> <span>다이어리·기록으로 남긴다</span></label>
+            <label class="opt"><input type="checkbox" name="keepWays" value="굿즈나 커스텀 제품을 사거나 만든다" /> <span>굿즈나 커스텀 제품을 사거나 만든다</span></label>
+            <label class="opt"><input type="checkbox" name="keepWays" value="그림·타투 등으로 남긴다" /> <span>그림·타투 등으로 남긴다</span></label>
+            <label class="opt"><input type="checkbox" name="keepWays" value="특별히 해본 것은 없다" /> <span>특별히 해본 것은 없다</span></label>
+            <label class="opt"><input type="checkbox" name="keepWays" value="기타" data-etc="etc-keep" /> <span>기타</span></label>
+          </fieldset>
+          <div class="etc-field" id="etc-keep">
+            <input type="text" name="keepWaysOther" placeholder="직접 입력" autocomplete="off" />
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="q">
+          <label class="label" for="keepReason"><span class="num">6</span>그렇게 한 이유나, 그때의 마음을 편하게 적어주세요.</label>
+          <textarea id="keepReason" name="keepReason"></textarea>
+        </div>
+
+        <!-- Q7 -->
+        <div class="q">
+          <label class="label" for="favProduct"><span class="num">7</span>반려동물 관련 제품·브랜드 중 기억에 남거나 좋았던 게 있다면?</label>
+          <input type="text" id="favProduct" name="favProduct" autocomplete="off" />
+        </div>
+
+        <!-- Q8 -->
+        <div class="q">
+          <span class="label"><span class="num">8</span>반려동물을 표현한 물건을 고를 때, 가장 중요한 건 무엇인가요?</span>
+          <span class="hint">최대 2개까지 골라주세요.</span>
+          <fieldset data-max="2">
+            <label class="opt"><input type="checkbox" name="chooseImportant" value="반려동물만의 특징이 담겼는지" /> <span>반려동물만의 특징이 담겼는지</span></label>
+            <label class="opt"><input type="checkbox" name="chooseImportant" value="일상에서 쓸 수 있는지" /> <span>일상에서 쓸 수 있는지</span></label>
+            <label class="opt"><input type="checkbox" name="chooseImportant" value="디자인·감성" /> <span>디자인·감성</span></label>
+            <label class="opt"><input type="checkbox" name="chooseImportant" value="가격" /> <span>가격</span></label>
+            <label class="opt"><input type="checkbox" name="chooseImportant" value="제작 퀄리티" /> <span>제작 퀄리티</span></label>
+            <label class="opt"><input type="checkbox" name="chooseImportant" value="오래 간직할 수 있는지" /> <span>오래 간직할 수 있는지</span></label>
+            <label class="opt"><input type="checkbox" name="chooseImportant" value="기타" data-etc="etc-choose" /> <span>기타</span></label>
+          </fieldset>
+          <p class="group-note" data-note="chooseImportant">2개까지만 고를 수 있어요.</p>
+          <div class="etc-field" id="etc-choose">
+            <input type="text" name="chooseImportantOther" placeholder="직접 입력" autocomplete="off" />
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="q">
+          <label class="label" for="appearance"><span class="num">9</span>가장 담고 싶은 반려동물의 특징적인 외형은 무엇인가요?</label>
+          <span class="hint">털색, 눈, 코, 발바닥, 무늬 등</span>
+          <textarea id="appearance" name="appearance" style="min-height:90px"></textarea>
+        </div>
+
+        <!-- Q10 -->
+        <div class="q">
+          <label class="label" for="colorExpr"><span class="num">10</span>반려동물을 색으로 표현한다면 무슨 색인가요?</label>
+          <span class="hint">그 이유도 함께 들려주세요.</span>
+          <textarea id="colorExpr" name="colorExpr"></textarea>
+        </div>
+
+        <!-- Q11 -->
+        <div class="q">
+          <label class="label" for="expectation"><span class="num">11</span>‘반짝’에게 기대하는 점이 있다면 들려주세요.</label>
+          <textarea id="expectation" name="expectation"></textarea>
+        </div>
+
+        <!-- Q12 -->
+        <div class="q" id="q12">
+          <span class="label"><span class="num">12</span>샘플링 이벤트에 참여하시겠어요?<span class="req">· 필수</span></span>
+          <span class="hint">반짝은 반려동물과의 순간을 오래 기억할 수 있도록, 그 아이만의 이야기를 담아 수제 비즈 악세서리를 만드는 브랜드예요. 샘플링 이벤트에서는 반짝 제품을 무료로 받아보고, 솔직한 후기를 남겨주시게 됩니다.</span>
+          <fieldset>
+            <label class="opt"><input type="radio" name="join" value="네, 참여할래요" /> <span>네, 참여할래요</span></label>
+            <label class="opt"><input type="radio" name="join" value="좀 더 알고 싶어요" /> <span>좀 더 알고 싶어요</span></label>
+            <label class="opt"><input type="radio" name="join" value="아니요" /> <span>아니요</span></label>
+          </fieldset>
+          <p class="err" data-err="join">참여 여부를 선택해주세요.</p>
+        </div>
+
+        <!-- Q13 -->
+        <div class="q">
+          <label class="label" for="insta"><span class="num">13</span>연락받을 인스타 아이디를 남겨주세요.</label>
+          <span class="hint">참여를 원하시는 경우에만요.</span>
+          <input type="text" id="insta" name="insta" placeholder="@" autocomplete="off" />
+        </div>
+
+        <!-- 개인정보 수집·이용 동의 (필수) -->
+        <div class="q" id="qConsent">
+          <div class="consent-box">
+            <p class="consent-title">개인정보 수집·이용 안내</p>
+            <ul class="consent-list">
+              <li><b>수집 항목</b>인스타그램 아이디, 반려동물 정보 및 설문 응답 내용</li>
+              <li><b>이용 목적</b>체험단 선정 및 결과 안내(연락)</li>
+              <li><b>보유 기간</b>이벤트 종료 후 3개월 이내 파기</li>
+              <li>동의를 거부할 수 있으며, 이 경우 체험단 참여가 제한될 수 있어요.</li>
+            </ul>
+          </div>
+          <label class="opt consent-check"><input type="checkbox" id="consent" name="consent" /> <span>(필수) 위 내용을 확인했고, 개인정보 수집·이용에 동의합니다.</span></label>
+          <p class="err" data-err="consent">개인정보 수집·이용에 동의해주세요.</p>
+        </div>
+
+        <div class="submit-wrap">
+          <button type="submit" class="send" id="sendBtn">이야기 보내기</button>
+          <p class="form-error" id="formError">보내는 중에 문제가 생겼어요. 잠시 후 다시 시도해주세요.</p>
+        </div>
+      </form>
+
+      <!-- 완료 -->
+      <div class="done" id="done">
+        <p class="refrain">고마워요. ✨</p>
+        <p>당신의 이야기가 반짝의 시작이 되었어요.<br />선정되시면 인스타그램 <a href="https://instagram.com/hello.banjjak" target="_blank" rel="noopener">@hello.banjjak</a> 으로 연락드릴게요.</p>
+        <p>넌 나의 반짝 ✨</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- 닫는 글 -->
+  <footer>
+    <div class="wrap">
+      <a class="ig-link" href="https://instagram.com/hello.banjjak" target="_blank" rel="noopener">@hello.banjjak</a>
+      <p class="sign">반짝 · 반려동물 수제 비즈 악세서리</p>
+    </div>
+  </footer>
+
+  <script>
+    // ─────────────────────────────────────────────────────────────
+    //  ▼ 스프레드시트 연결: 아래 따옴표 안에 Apps Script 웹앱 URL을 붙여넣으세요.
+    //    (설정 전에는 자동으로 '미리보기 모드'로 동작해 완료 화면만 보여줍니다.)
+    const ENDPOINT = "https://script.google.com/macros/s/AKfycbzHJlx_R3nXloL16zomhkaSSS5dA4fkSPmWGikuAAI085v3Lc29ktrI8D0YxrUHdqLd/exec";
+    // ─────────────────────────────────────────────────────────────
+
+    const form = document.getElementById('form');
+    const done = document.getElementById('done');
+    const sendBtn = document.getElementById('sendBtn');
+    const formError = document.getElementById('formError');
+
+    // '기타/그 외' 입력칸 열고 닫기
+    document.querySelectorAll('[data-etc]').forEach(function(input){
+      const target = document.getElementById(input.getAttribute('data-etc'));
+      const sync = function(){
+        if (input.type === 'radio'){
+          // 같은 그룹의 다른 라디오를 고르면 닫기
+          const name = input.name;
+          document.querySelectorAll('input[name="'+name+'"]').forEach(function(r){
+            const t = r.getAttribute('data-etc');
+            if (t){ document.getElementById(t).classList.toggle('show', r.checked); }
+          });
+        } else {
+          target.classList.toggle('show', input.checked);
+        }
+      };
+      input.addEventListener('change', sync);
+      // 라디오는 그룹 전체가 반응해야 하므로 형제도 연결
+      if (input.type === 'radio'){
+        document.querySelectorAll('input[name="'+input.name+'"]').forEach(function(r){
+          r.addEventListener('change', sync);
+        });
+      }
+    });
+
+    // 체크박스 최대 개수 제한 (Q8)
+    document.querySelectorAll('fieldset[data-max]').forEach(function(fs){
+      const max = parseInt(fs.getAttribute('data-max'), 10);
+      const boxes = fs.querySelectorAll('input[type="checkbox"]');
+      const note = fs.parentElement.querySelector('.group-note');
+      boxes.forEach(function(box){
+        box.addEventListener('change', function(){
+          const checked = fs.querySelectorAll('input[type="checkbox"]:checked');
+          if (checked.length > max){
+            box.checked = false;
+            if (note){
+              note.classList.add('show');
+              setTimeout(function(){ note.classList.remove('show'); }, 2200);
+            }
+          }
+        });
+      });
+    });
+
+    function clearError(name){
+      const el = document.querySelector('.err[data-err="'+name+'"]');
+      if (el){ el.classList.remove('show'); el.closest('.q').classList.remove('invalid'); }
+    }
+    function showError(name){
+      const el = document.querySelector('.err[data-err="'+name+'"]');
+      if (el){ el.classList.add('show'); el.closest('.q').classList.add('invalid'); }
+      return el ? el.closest('.q') : null;
+    }
+    ['petName','join'].forEach(function(n){
+      const f = form.elements[n];
+      if (f && f.addEventListener){ f.addEventListener('input', function(){ clearError(n); }); }
+    });
+    document.querySelectorAll('input[name="petType"], input[name="join"]').forEach(function(r){
+      r.addEventListener('change', function(){ clearError(r.name); });
+    });
+    document.getElementById('consent').addEventListener('change', function(){ clearError('consent'); });
+
+    function joinChecked(name){
+      const vals = [];
+      document.querySelectorAll('input[name="'+name+'"]:checked').forEach(function(c){ vals.push(c.value); });
+      return vals;
+    }
+    function val(name){
+      const el = form.elements[name];
+      if (!el) return '';
+      if (el.value !== undefined) return el.value.trim();
+      return '';
+    }
+    function radioVal(name){
+      const el = form.querySelector('input[name="'+name+'"]:checked');
+      return el ? el.value : '';
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      formError.classList.remove('show');
+
+      // 필수 검증
+      let firstInvalid = null;
+      if (!val('petName')){ const q = showError('petName'); if (!firstInvalid) firstInvalid = q; }
+      if (!radioVal('petType')){ const q = showError('petType'); if (!firstInvalid) firstInvalid = q; }
+      if (!radioVal('join')){ const q = showError('join'); if (!firstInvalid) firstInvalid = q; }
+      if (!document.getElementById('consent').checked){ const q = showError('consent'); if (!firstInvalid) firstInvalid = q; }
+      if (firstInvalid){
+        firstInvalid.scrollIntoView({ behavior:'smooth', block:'center' });
+        return;
+      }
+
+      // petType: '그 외' 직접입력 합치기
+      let petType = radioVal('petType');
+      if (petType === '그 외' && val('petTypeOther')) petType = '그 외: ' + val('petTypeOther');
+
+      // keepWays
+      let keep = joinChecked('keepWays');
+      if (keep.indexOf('기타') !== -1 && val('keepWaysOther')){
+        keep = keep.filter(function(v){ return v !== '기타'; });
+        keep.push('기타: ' + val('keepWaysOther'));
+      }
+
+      // chooseImportant
+      let choose = joinChecked('chooseImportant');
+      if (choose.indexOf('기타') !== -1 && val('chooseImportantOther')){
+        choose = choose.filter(function(v){ return v !== '기타'; });
+        choose.push('기타: ' + val('chooseImportantOther'));
+      }
+
+      const payload = {
+        petName: val('petName'),
+        petType: petType,
+        momentMemory: val('momentMemory'),
+        relationship: val('relationship'),
+        keepWays: keep.join(', '),
+        keepReason: val('keepReason'),
+        favProduct: val('favProduct'),
+        chooseImportant: choose.join(', '),
+        appearance: val('appearance'),
+        colorExpr: val('colorExpr'),
+        expectation: val('expectation'),
+        join: radioVal('join'),
+        insta: val('insta'),
+        privacyConsent: document.getElementById('consent').checked ? '동의' : '미동의'
+      };
+
+      finishOrSend(payload);
+    });
+
+    function showDone(){
+      form.style.display = 'none';
+      const priv = document.querySelector('.privacy');
+      done.classList.add('show');
+      done.scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+
+    function finishOrSend(payload){
+      // 미리보기 모드 (URL 미설정)
+      if (ENDPOINT.indexOf('PASTE_') === 0){
+        console.log('[미리보기 모드] 전송될 데이터:', payload);
+        showDone();
+        return;
+      }
+      sendBtn.disabled = true;
+      sendBtn.textContent = '보내는 중…';
+      fetch(ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      }).then(function(){
+        showDone();
+      }).catch(function(){
+        sendBtn.disabled = false;
+        sendBtn.textContent = '이야기 보내기';
+        formError.classList.add('show');
+      });
+    }
+  </script>
+
+</body>
+</html>
